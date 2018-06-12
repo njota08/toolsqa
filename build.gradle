@@ -1,0 +1,27 @@
+group 'com.github.njota08.toolsqa'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+jar {
+    manifest {
+        attributes 'Implementation-Title': 'ToolsQA',
+                'Implementation-Version': version
+    }
+}
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+test {
+    ignoreFailures = true
+    useTestNG()
+}
+
+dependencies {
+    testCompile group: 'org.testng', name: 'testng', version: '6.14.3'
+    compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '2.41.0'
+
+}
